@@ -143,7 +143,8 @@
         } else {
           method = element.data('method');
           url = rails.href(element);
-          data = element.data('params') || null;
+          if (element.data('attribute-parameters')==true) data = $.param(element.data())
+          else data = element.data('params') || null;
         }
 
         options = {
